@@ -1,6 +1,6 @@
 # insights-on-Airbnb-Tokyo-
-python analysis using calendar and listing dataset of Tokyo 
-## For the following analysis I have downloaded the data from [https://insideairbnb.com/get-the-data/](https://data.insideairbnb.com/united-states/fl/broward-county/2024-09-23/data/calendar.csv.gz)
+Python analysis using calendar and listing dataset of Tokyo 
+## For the following analysis, I have downloaded the data from [https://insideairbnb.com/get-the-data/](https://data.insideairbnb.com/united-states/fl/broward-county/2024-09-23/data/calendar.csv.gz)
 
 ``` diff
 import pandas as pd
