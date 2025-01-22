@@ -1,13 +1,26 @@
-# DataAirbnb
-doing an analysis for the dataset about Florida
-## For the following analysis, I have downloaded the following data from: https://insideairbnb.com/get-the-data/
+# insights-on-Airbnb-Tokyo-
+python analysis using calendar and listing dataset of Tokyo 
+## For the following analysis I have downloaded the data from [https://insideairbnb.com/get-the-data/](https://data.insideairbnb.com/united-states/fl/broward-county/2024-09-23/data/calendar.csv.gz)
+
 ``` diff
 import pandas as pd
-DF = pd.read_csv("calendar.csv")
-```
-# :white_check_mark: We need to know the number of available and unavailable rooms
-``` diff
-DF.available.value_counts()
+data=pd.read_csv("calendar.csv")
 ```
 
-* T stands for avilable, F stand for unavailable
+## 1 want to know the number of available and unavailable rooms
+
+``` diff
+data.available.value_counts()
+```
+<img width="360" alt="image" src="https://github.com/user-attachments/assets/abf39c86-5b3d-46da-a0c1-295c911aa600" />
+
+f(false) means not available, t(true) means available 
+
+## 2 purpose: calculates the percentage of available (t) and unavailable (f) dates.
+Explanation value_counts(normalize=True) give proportion. Multiplaying by 100 converts the proportion into percentage
+
+
+``` diff
+availability_percentage = calendar['available'].value_counts(normalize=True) * 100
+availability_percentage
+```
