@@ -1,6 +1,6 @@
-# insights-on-Airbnb-Manchester-
-python analysis using calendar and listing dataset of Manchester 
-## For the following analysis I have download the data from https://data.insideairbnb.com/united-kingdom/england/greater-manchester/2024-09-23/data/calendar.csv.gz
+# insights-on-Airbnb-Florida-
+python analysis using calendar and listing dataset of Florida 
+## For the following analysis I have download the data from https://data.insideairbnb.com/united-kingdom/england/greater-Florida/2024-09-23/data/calendar.csv.gz
 ``` diff
 import pandas as pd
 calendar=pd.read_csv("calendar.csv")
@@ -9,7 +9,8 @@ calendar=pd.read_csv("calendar.csv")
 ``` diff
 calendar.available.value_counts()
 ```
-<img width="360" alt="image" src="https://github.com/user-attachments/assets/abf39c86-5b3d-46da-a0c1-295c911aa600" />
+<img width="732" alt="image" src="https://github.com/user-attachments/assets/5c6a7e45-eedd-444d-9c09-c73e72aff99f" />
+
 
 f(false) means not available, t(true) means available 
 
@@ -21,7 +22,8 @@ Explanation value_counts(normalize=True) give proportion. Multiplaying by 100 co
 availability_percentage = calendar['available'].value_counts(normalize=True) * 100
 availability_percentage
 ```
-<img width="439" alt="image" src="https://github.com/user-attachments/assets/1b037fef-de38-408d-b111-6ff580538c48" />
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/003bbbb7-ec79-45c6-a316-ec8d2a140b13" />
+
 
 ## 3 Let's Count the busiest day!
 Hint We will be counting the most unavailable days (given by f)
@@ -30,7 +32,8 @@ busiest_dates = calendar[calendar['available'] == 'f']['date'].value_counts()
 print("Busiest Dates:")
 print(busiest_dates.head())
 ```
-<img width="439" alt="image" src="https://github.com/user-attachments/assets/cff9c014-4e09-4095-ae53-541a9ce0a5c1" />
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/22a4ced9-d30e-47e9-9ad0-cb89c9393d13" />
+
 
 ## 4 Plot a bar graph to show availability percentage
 ``` diff
@@ -41,7 +44,8 @@ plt.ylabel('Percentage')
 plt.xlabel('Available (t/f)')
 plt.show()
 ```
-<img width="614" alt="image" src="https://github.com/user-attachments/assets/286d32d7-cc77-48f9-bacb-751e395e0692" />
+<img width="732" alt="image" src="https://github.com/user-attachments/assets/a32035ec-76bf-4cac-8b5f-2d0f7eee51f5" />
+
 
 ## 5 Plot the busiest day
 ``` diff
@@ -51,21 +55,26 @@ plt.ylabel('Number of Listings Unavailable')
 plt.xlabel('Date')
 plt.show()
 ```
-<img width="614" alt="image" src="https://github.com/user-attachments/assets/1b7353d0-97dc-4b97-8b24-20bd4d160153" />
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/7f1b9771-9c42-4770-8fdf-ef229834917b" />
 
-## 📄 Download listings dataset of Manchester from
-https://data.insideairbnb.com/united-kingdom/england/greater-manchester/2024-09-23/visualisations/listings.csv
+
+## 📄 Download listings dataset of Florida from
+https://data.insideairbnb.com/united-kingdom/england/greater-Florida/2024-09-23/visualisations/listings.csv
 
 ``` diff
 import pandas as pd
 listings = pd.read_csv('listings.csv')
 ```
-<img width="995" alt="image" src="https://github.com/user-attachments/assets/93f5adbb-9832-44c5-bf77-1410aa4f1b0c" />
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/ef7bae65-c6f3-49b7-93a2-3c4c315ff6ee" />
+
+
 
 ``` diff
 listings.columns
 ```
-<img width="786" alt="image" src="https://github.com/user-attachments/assets/9e38145d-7b10-452f-9435-02f782cd8cf3" />
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/77ce8d74-c4cf-4aa8-a934-0702a66d6888" />
+
+
 
 ## ✅ Room type and price is given seperately
 Let`s Combine and visualize them
@@ -82,7 +91,8 @@ plt.xlabel('Room Type')
 
 plt.show()
 ```
-<img width="609" alt="image" src="https://github.com/user-attachments/assets/3e78e43f-e4fb-40d7-86a3-3189e87a9f6c" />
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/dfe7403c-c5b9-4d4d-9a94-3663a35dc6fc" />
+
 
 ## ✅ Which are the top 10 neighborhoods with the most listings?
 ``` diff
@@ -98,7 +108,8 @@ plt.xlabel('Neighborhood')
 plt.xticks(rotation=90)
 plt.show()
 ```
-<img width="607" alt="image" src="https://github.com/user-attachments/assets/a4be621d-9587-4c6e-96b8-940391119ed6" />
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/9f71f993-ce75-4d2e-bb92-fdf9685d3623" />
+
 
 ## ✅ What is the distribution of the room types (Private room, Entire home/apt) in the listings data?
 ```diff
@@ -127,7 +138,8 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 ```
-<img width="826" alt="image" src="https://github.com/user-attachments/assets/49dfc75e-75d1-476c-8a37-9b256ec7d92d" />
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/79cbd0e6-c7a7-486c-828c-5d093e45f987" />
+
 
 ## ✅ Geographical Distribution of Listings (Price Colored)
 ``` diff
@@ -142,35 +154,37 @@ plt.xlabel('Longitude')
 plt.ylabel('Latitude')
 plt.show()
 ```
-<img width="894" alt="image" src="https://github.com/user-attachments/assets/1fea2e32-136c-4f18-918a-dc522d5ff3b7" />
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/d95541d4-721a-471f-a428-e5451e92e6ce" />
+
 
 ## Let us see the listings on a real map
-Hotter Areas (Red/Yellow): High Density: The areas that appear in red or yellow (the "hot" colors) indicate higher density or concentration of listings. This means there are more listings in these areas. Popular Locations: These regions might be more popular or in high demand. It could be near tourist attractions, popular neighborhoods, or central areas in Manchester where people tend to stay more often. Colder Areas (Green/Blue):
+Hotter Areas (Red/Yellow): High Density: The areas that appear in red or yellow (the "hot" colors) indicate higher density or concentration of listings. This means there are more listings in these areas. Popular Locations: These regions might be more popular or in high demand. It could be near tourist attractions, popular neighborhoods, or central areas in Florida where people tend to stay more often. Colder Areas (Green/Blue):
 
 Low Density: Areas with blue or green (the "cold" colors) indicate a lower concentration of listings. These regions have fewer listings available. Less Popular Locations: These areas might be less popular or further from key attractions. If you're looking at pricing or other factors, lower density could imply less competition in these regions, which might indicate more affordable areas or less tourist traffic. Density Patterns:
 
-Clustered Areas: If you notice clusters of heatmap intensity, they represent hotspots. These might correspond to high-traffic areas like resorts, beaches, or urban centers. Spread-Out Listings: If the heatmap shows a more uniform distribution, it could suggest that listings are more evenly spread across the region, which may reflect a more balanced demand for rentals across different areas of Manchester.
+Clustered Areas: If you notice clusters of heatmap intensity, they represent hotspots. These might correspond to high-traffic areas like resorts, beaches, or urban centers. Spread-Out Listings: If the heatmap shows a more uniform distribution, it could suggest that listings are more evenly spread across the region, which may reflect a more balanced demand for rentals across different areas of Florida.
 ``` diff
 import folium
 from folium.plugins import HeatMap
 import pandas as pd
 
 
-Manchester_data = listings[['latitude', 'longitude', 'price']]  # Example, you may add more columns
+Florida_data = listings[['latitude', 'longitude', 'price']]  # Example, you may add more columns
 
-# Create a base map centered around Manchester
-m = folium.Map(location=[20.7967, -156.3319], zoom_start=10)
+# Create a base map centered around Florida
+m = folium.Map(location=[27.6648, 81.5158], zoom_start=10)
 
 # Prepare the data for the heatmap
-heat_data = [[row['latitude'], row['longitude']] for index, row in Manchester_data.iterrows()]
+heat_data = [[row['latitude'], row['longitude']] for index, row in Florida_data.iterrows()]
 
 # Add the heatmap to the map
 HeatMap(heat_data).add_to(m)
 
 # Save the map as an HTML file to view in a browser
-m.save('Manchester_heatmap.html')
+m.save('Florida_heatmap.html')
 
 # If you're using Jupyter Notebook, you can display the map directly in the notebook:
 m
 ```
-<img width="973" alt="image" src="https://github.com/user-attachments/assets/dee5f257-6fa0-4bc0-8761-124db081b18e" />
+<img width="732" alt="image" src="https://github.com/user-attachments/assets/525bdec5-bd1b-40ce-ace7-ac13d77d03eb" />
+
